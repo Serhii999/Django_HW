@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+{% load custom_tags %}
+{% block content %}
+    {% random_id as article_num %}
+    {% random_slug as slug_name %}
+    <div style="padding: 20px; background-color: violet"> Main page!</div>
+
+    <div style="padding: 20px; background-color: lightcoral">
+        <a href="{% url 'article_with_int' article_num %}">To the article with random number</a>
+    </div>
+    <div style="padding: 20px; background-color: lightblue">
+        <a href="{% url 'article_name' article_num slug_name %}">To the article with random name</a>
+    </div>
+
+
+>
+{% endblock %}
+</body>
+</html>

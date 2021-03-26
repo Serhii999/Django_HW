@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style= 'padding:20px; background-color: aqua' >
+    {% if article_num %}
+        {% if article_num|divisibleby:2 %}
+            <span>This article is even</span>
+        {% else %}
+            <span>This article is odd</span>
+        {% endif %}
+    {% if slug_name %}
+        {% include 'add.html' with name=slug_name %}
+    {% endif %}
+    {% endif %}
+    </div>
+    </div>
+    <a href="{% url 'main' %}"> To the main page!</a>
+
+
+{% endblock %}
